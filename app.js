@@ -1,4 +1,5 @@
 const rand = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+const title = document.querySelector(".portfolio__title--multicolor");
 
 const enhance = (id) => {
   const element = document.getElementById(id),
@@ -34,3 +35,19 @@ const enhance = (id) => {
 };
 
 enhance("channel-link");
+
+function randomColor() {
+  let color = [];
+  for (let i = 0; i < 3; i++) {
+    color.push(Math.floor(Math.random() * 256));
+  }
+  return "rgb(" + color.join(", ") + ")";
+}
+
+title.addEventListener("mouseover", function () {
+  title.style.color = randomColor();
+});
+
+title.addEventListener("mouseout", function () {
+  title.style.color = randomColor();
+});

@@ -3,6 +3,12 @@
   --blue: rgb(41, 121, 255);
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 @keyframes float {
   from,
   to {
@@ -24,8 +30,8 @@
   }
 }
 
-body {
-  height: 100vh;
+.hero-page {
+  min-height: 100vh;
   background-color: black;
   margin: 0rem;
   overflow: hidden;
@@ -46,6 +52,7 @@ body {
   margin: 0rem;
   text-transform: uppercase;
   transition: opacity 250ms ease;
+  cursor: default;
 }
 
 a {
@@ -54,6 +61,10 @@ a {
 
 #text:has(.fancy:hover) .word:not(.fancy:hover) {
   opacity: 0.2;
+}
+
+.fancy {
+  cursor: pointer;
 }
 
 .fancy span {
@@ -76,6 +87,7 @@ a {
   background: linear-gradient(to right, var(--blue), var(--green), var(--blue));
   background-size: 1000%;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: background-pan 150s linear infinite;
 }
@@ -126,4 +138,29 @@ a {
 
 .fancy:hover > .outer:nth-child(12) {
   transform: translate(120%, -30%) rotate(-10deg);
+}
+
+.portfolio {
+  background-color: black;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  font-family: "Rubik", sans-serif;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  flex-direction: column;
+}
+
+.portfolio__title {
+  font-weight: 500;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  font-size: clamp(1rem, 6vw, 5rem);
+  letter-spacing: 0.8rem;
+  text-transform: uppercase;
+}
+
+.portfolio__title--multicolor {
+  transition: 0.5s;
 }
