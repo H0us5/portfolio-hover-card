@@ -98,3 +98,12 @@ title.addEventListener("mouseover", function () {
 title.addEventListener("mouseout", function () {
   title.style.color = randomColor();
 });
+
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function () {
+    navigator.serviceWorker
+      .register("./ws.js")
+      .then((res) => console.log("service worker registered"))
+      .catch((err) => console.log("service worker not registered", err));
+  });
+}

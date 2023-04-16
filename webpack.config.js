@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -11,8 +12,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].[contenthash].js",
-    clean: true,
+    filename: "js/[name].js",
     assetModuleFilename: "[path][name][ext]",
   },
   devtool: isDev && "source-map",
@@ -26,7 +26,14 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contenthash].css",
+      filename: "css/[name].css",
+    }),
+    new CopyPlugin({
+      patterns: [
+        { from: "./manifest.json", to: "./" },
+        { from: "./ws.js", to: "./" },
+        { from: "./img/icons/", to: "./img/icons/" },
+      ],
     }),
   ],
   module: {

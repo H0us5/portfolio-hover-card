@@ -20,15 +20,18 @@
   },
   "homepage": "https://github.com/H0us5/portfolio-hover-card#readme",
   "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "html-webpack-plugin": "^5.5.0",
+    "http-server": "^14.1.1",
     "mini-css-extract-plugin": "^2.7.5",
     "webpack": "^5.78.0",
     "webpack-cli": "^5.0.1"
   },
   "dependencies": {
     "html-webpack-exclude-assets-plugin": "^0.0.7",
-    "html-webpack-exclude-assets-plugin-webpack5": "^0.0.7"
+    "html-webpack-exclude-assets-plugin-webpack5": "^0.0.7",
+    "workbox-webpack-plugin": "^6.5.4"
   }
 }

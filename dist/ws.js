@@ -1,0 +1,1 @@
+const staticCache="bd-portfolio-v1",assets=["./","./index.html","./css/script.css","./js/script.js","./img/image1.webp"];self.addEventListener("install",(e=>{e.waitUntil(caches.open(staticCache).then((e=>{e.addAll(assets)})))})),self.addEventListener("fetch",(e=>{e.respondWith(caches.match(e.request).then((s=>s||fetch(e.request))))}));
